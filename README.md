@@ -1,4 +1,4 @@
-# Face Detection Model using VGG16
+# Face Detection using VGG16
 
 This project implements a face detection model using transfer learning with the VGG16 architecture. The project leverages TensorFlow, Keras, OpenCV, and Albumentations for building, training, and evaluating the model. Image annotations are handled using Labelme.
 
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 ## Running the Script
 
-To train the model, simply run:
+To use the model, simply run:
 
 ```sh
 python face.py
