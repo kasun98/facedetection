@@ -5,9 +5,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 
-model = load_model('models/facetracker.h5')
-
-
+face_model = load_model('models/facetracker.h5')
 
 cap = cv2.VideoCapture(0)
 while cap.isOpened():
@@ -17,7 +15,7 @@ while cap.isOpened():
     rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     resized = tf.image.resize(rgb, (120,120))
     
-    yhat = model.predict(np.expand_dims(resized/255,0))
+    yhat = face_model.predict(np.expand_dims(resized/255,0))
     sample_coords = yhat[1][0]
     
     if yhat[0] > 0.5: 
